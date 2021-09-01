@@ -17,11 +17,19 @@ To run demo type this in the command line:
 1. Download COCO class names file: `wget https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names`
 2. Download and convert model weights:    
     1. Download binary file with desired weights: 
-        1. Full weights: `wget https://pjreddie.com/media/files/yolov3.weights`
-        1. Tiny weights: `wget https://pjreddie.com/media/files/yolov3-tiny.weights` 
-        1. SPP weights: `wget https://pjreddie.com/media/files/yolov3-spp.weights` 
-    2. Run `python ./convert_weights.py` and `python ./convert_weights_pb.py`        
-3. Run `python ./demo.py --input_img <path-to-image> --output_img <name-of-output-image> --frozen_model <path-to-frozen-model>`
+        1. Full weights: 
+           `wget https://pjreddie.com/media/files/yolov3.weights`
+        2. Tiny weights: 
+           `wget https://pjreddie.com/media/files/yolov3-tiny.weights` 
+        3. SPP weights: 
+           `wget https://pjreddie.com/media/files/yolov3-spp.weights` 
+    2. `python ./convert_weights.py`
+    3. `python ./convert_weights_pb.py`   
+
+3. Download test image
+   `wget https://raw.githubusercontent.com/YunYang1994/tensorflow-yolov3/master/docs/images/road.jpeg`   
+4. Run 
+   `python demo.py --input_img road.jpeg --output_img out.jpg --frozen_model frozen_darknet_yolov3_model.pb`
 
 
 ####Optional Flags
